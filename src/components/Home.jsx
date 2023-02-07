@@ -10,6 +10,7 @@ function Home(props) {
         email: "drakshapatle15@gmail.com",
     };
     // const user = props.auth.user;
+
     const [journeys, setJourneys] = useState(
         [
             {
@@ -32,11 +33,12 @@ function Home(props) {
             },
         ]
     );
+    
 
     return (
         <>
             <Nav />
-{/* 
+            {/* 
             <h1>
                 Hello {user.name}
             </h1> */}
@@ -44,9 +46,26 @@ function Home(props) {
             {journeys.map((journey) => (
                 <div className="image-card" >
                     <div className="image-container">
-                        <div className="title">
-                            {journey.title}
-                        </div>
+
+                        {/* <div className="title"> */}
+
+                            <div className="titlehead">
+                                {journey.title}
+
+                                <ul className="right">
+                        
+                                    <button className ="editbtn">Edit</button>
+                                    <button className="deletbtn">Delete</button>
+                                    {/* <li></li>
+                                    <li></li> */}
+                                </ul>
+                                
+                            </div>
+
+
+                            
+
+                        {/* </div> */}
                         <img src={journey.image} alt="" />
                     </div>
                     <div className="date">{journey.date}</div>

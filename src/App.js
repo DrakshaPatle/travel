@@ -6,8 +6,10 @@ import Footer from './components/Footer'
 import Signup from './components/Signup'
 import Card from './components/Card'
 import Home from './components/Home';
+// import LoginPage from './components/Login';
 
 import PrivateComponent from './components/PrivateComponent';
+import LoginPage from './components/Login';
 function App() {
 
   const auth = localStorage.getItem('user');
@@ -18,10 +20,11 @@ function App() {
           <Routes>
             <Route element={<PrivateComponent />}>
               <Route path="/" element={<Home />} />
-              <Route path="/add" element={<h1>Add product component </h1>} />
+              <Route path="/add" element={<Card/>} />
               <Route path="/update" element={<h1>update product component </h1>} />
               <Route path="/logout" element={<h1> Logout componenet </h1>} />
               <Route path="/profile" element={<h1> Profilecomponet</h1>} />
+              <Route path="/login" element={<LoginPage />} />
             </Route>
             <Route path="/signup" element={<Signup />} />
           </Routes>
