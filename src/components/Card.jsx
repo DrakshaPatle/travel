@@ -34,6 +34,8 @@ const Card = () => {
         onChange={(e) => setDate(e.target.value)}
         className="card-input"
       />
+      <h1>hiii</h1>
+      <button className="cardbtn">Send</button>
     </div>
   );
 };

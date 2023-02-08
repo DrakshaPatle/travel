@@ -44,6 +44,8 @@
   font-weight: 710;
   font-size:15px;
 }
+
+
 .signinbtn{
   background-color: rgb(248, 239, 227);
   margin-right: 5px;
@@ -59,7 +61,9 @@
     text-align: center;
     color:#fff;
     background-color: black;
-    padding: 2rem 0 ;
+    margin-bottom: 0px;
+    margin-top: 150px;
+    padding: 5rem 0 ;
 }
 
 .register{
@@ -67,11 +71,11 @@
 }
 .inputBox {
   display: block;
-  border: 1px solid orange;
+  border: 1px solid rgb(177, 124, 26);
   padding: 7px;
   margin: 10px;
-  width: 300px;
-  border:1px solid skyblue;
+  width: 100px;
+  border:1px solid rgb(123, 168, 185);
   
   
 }
@@ -117,4 +121,12 @@
 .card-textarea {
   height: 150px;
   resize: none;
+}
+
+
+.cardbtn{
+  background-color: rgb(232, 196, 118);
+font-size: 20px;
+border-color: #ea1010;
+
 }

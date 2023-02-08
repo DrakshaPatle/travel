@@ -14,26 +14,45 @@ function Home(props) {
     const [journeys, setJourneys] = useState(
         [
             {
-                "title": "title",
+
+
+                "id": "1",
+                "title": "title1",
                 "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem necessitatibus velit officia, alias, repellendus consectetur eaque ea at facilis dolore aut laboriosam corrupti maxime nesciunt reprehenderit hic animi id earum aliquam fuga. Ad officiis modi explicabo iusto obcaecati dignissimos accusamus. Voluptas ullam consequatur beatae dolorem quod provident impedit quia laborum!",
                 "image": "https://source.unsplash.com/random/journey",
                 "date": "29 January 2023",
             },
             {
+                "id": "2",
                 "title": "title 2",
                 "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem necessitatibus velit officia, alias, repellendus consectetur eaque ea at facilis dolore aut laboriosam corrupti maxime nesciunt reprehenderit hic animi id earum aliquam fuga. Ad officiis modi explicabo iusto obcaecati dignissimos accusamus. Voluptas ullam consequatur beatae dolorem quod provident impedit quia laborum!",
                 "image": "https://source.unsplash.com/random/trees",
                 "date": "29 January 2023",
             },
             {
-                "title": "title 2",
+                "id": "3",
+                "title": "title 3",
+                "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem necessitatibus velit officia, alias, repellendus consectetur eaque ea at facilis dolore aut laboriosam corrupti maxime nesciunt reprehenderit hic animi id earum aliquam fuga. Ad officiis modi explicabo iusto obcaecati dignissimos accusamus. Voluptas ullam consequatur beatae dolorem quod provident impedit quia laborum!",
+                "image": "https://source.unsplash.com/random/city",
+                "date": "29 January 2023",
+            },
+
+            {
+                "id": "4",
+                "title": "title 4",
                 "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem necessitatibus velit officia, alias, repellendus consectetur eaque ea at facilis dolore aut laboriosam corrupti maxime nesciunt reprehenderit hic animi id earum aliquam fuga. Ad officiis modi explicabo iusto obcaecati dignissimos accusamus. Voluptas ullam consequatur beatae dolorem quod provident impedit quia laborum!",
                 "image": "https://source.unsplash.com/random/city",
                 "date": "29 January 2023",
             },
         ]
     );
-    
+
+
+
+    const handleDelete = (id) => {
+        const newJourneys = journeys.filter(journey => journey.id!==(id));
+        setJourneys(newJourneys);
+    }
 
     return (
         <>
@@ -44,26 +63,26 @@ function Home(props) {
             </h1> */}
 
             {journeys.map((journey) => (
-                <div className="image-card" >
+                <div className="image-card" key={journey.id }>
                     <div className="image-container">
 
                         {/* <div className="title"> */}
 
-                            <div className="titlehead">
-                                {journey.title}
+                        <div className="titlehead" >
+                            {journey.title}
 
-                                <ul className="right">
-                        
-                                    <button className ="editbtn">Edit</button>
-                                    <button className="deletbtn">Delete</button>
-                                    {/* <li></li>
+                            <ul className="right">
+
+                                <button className="editbtn">Edit</button>
+                                <button onClick={() => handleDelete(journey.id)} className="deletbtn">Delete</button>
+                                {/* <li></li>
                                     <li></li> */}
-                                </ul>
-                                
-                            </div>
+                            </ul>
+
+                        </div>
 
 
-                            
+
 
                         {/* </div> */}
                         <img src={journey.image} alt="" />
